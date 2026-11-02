@@ -2,9 +2,8 @@ name: Update Subscription
 
 on:
   schedule:
-    # اجرا هر ۶ ساعت یک‌بار به صورت خودکار
     - cron: '0 */6 * * *'
-  workflow_dispatch: # قابلیت اجرای دستی از پنل گیت‌هاب
+  workflow_dispatch:
 
 jobs:
   build:
