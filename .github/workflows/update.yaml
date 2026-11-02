@@ -20,16 +20,16 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install dependencies
+      - name: Install requests
         run: pip install requests
 
-      - name: Run Python script
+      - name: Run script
         run: python main.py
 
-      - name: Commit and Push changes
+      - name: Commit result
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add sub.txt
-          git diff-index --quiet HEAD || git commit -m "Auto update subscription"
+          git diff-index --quiet HEAD || git commit -m "Update sub"
           git push
