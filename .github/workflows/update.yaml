@@ -2,7 +2,7 @@ name: Update Subscription
 
 on:
   schedule:
-    - cron: '0 */6 * * *'
+    - cron: '0 * * * *'  # اجرا در دقیقه صفر هر ساعت (هر ۱ ساعت)
   workflow_dispatch:
 
 jobs:
@@ -31,5 +31,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add sub.txt
-          git diff-index --quiet HEAD || git commit -m "Update sub"
+          git diff-index --quiet HEAD || git commit -m "Update sub hourly with flags"
           git push
